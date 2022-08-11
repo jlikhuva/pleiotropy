@@ -1,4 +1,4 @@
-name: pleiotropy CI
+name: Pleiotropy CI
 'on':
   push:
     branches:

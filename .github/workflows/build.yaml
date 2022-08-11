@@ -6,6 +6,7 @@ name: Pleiotropy CI
   pull_request:
     branches:
       - main
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,3 +29,7 @@ jobs:
           python -m pip install tox tox-gh-actions
       - name: Run tox
         run: tox
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+            fail_ci_if_error: true
